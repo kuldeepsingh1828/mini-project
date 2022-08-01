@@ -1,5 +1,51 @@
-<div class="grid-container" style="width: 100%;">
-  <h1 class="mat-h1">Dashboard</h1>
+<div style="background-color: #303030;margin:0px;width:100%;color:white;padding-top:100px;">
+  <div style="display: flex;flex-direction:column ;align-items: center;">
+    <div>
+      <mat-icon role="img" style="width: 40px;height:40px;font-size:40px;color:white">dashboard</mat-icon>
+    </div>
+    <div>
+      <h4>Welcome to Dashboard</h4>
+    </div>
+  </div>
+  <div>
+    <button
+      style="color:white;background-color: #2E88D1;color:white;border-radius: 50%;width: 40px;height: 40px;border:none;margin-right: 10px;margin-bottom: 20px;">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button style="color:white;background-color: #2E88D1;color:white;border-radius: 50%;width: 40px;height: 40px;border:none">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="grid-container contents" style="width: 95%;">
+  <div style="display: flex;    justify-content: space-between;">
+    <mat-card style="background-color: #3A9EE1;color:white;margin: 0;padding: 3px;">
+      <h2 align="end">39</h2>
+      <p style="color: white">
+        COMPLETED APPLICATIONS
+      </p>
+    </mat-card>
+    <mat-card style="background-color: #3A9EE1;color:white;margin: 0;padding: 3px;">
+      <h2 align="end">39</h2>
+      <p style="color: white">
+        APPROVED APPLICATIONS</p>
+    </mat-card>
+
+    <mat-card style="background-color: #424242;color:white;margin: 0;padding: 3px;">
+      <h2 align="end">39</h2>
+      <p>DECLINED APPLICATIONS</p>
+    </mat-card>
+
+    <mat-card style="background-color: #424242;color:white;margin: 0;padding: 3px;">
+      <h2 align="end">39</h2>
+      <p>AVERAGE APPROVAL AMOUNT</p>
+    </mat-card>
+
+    <mat-card style="background-color: #424242;color:white;margin: 0;padding: 3px;">
+      <h2 align="end">39</h2>
+      <p>APPROVAL PERCENTAGE</p>
+    </mat-card>
+  </div>
   <mat-grid-list cols="4" rowHeight="500px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">

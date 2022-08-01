@@ -13,6 +13,7 @@ input {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #424242
 }
 
 .mat-form-field-outline {
@@ -92,7 +93,6 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     min-height: 100vh;
-    background: #e2e2e2;
 }
 
 .login-wrapper {
@@ -111,7 +111,6 @@ body {
     float: left;
     padding: 60px 50px 40px 50px;
     width: 100%;
-    background: #fff;
     border-radius: 10px;
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -189,4 +188,54 @@ body {
 
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
     padding: 0.8375em 0;
+}
+
+.main-nav {
+    display: flex;
+}
+
+.drawer {
+    position: fixed;
+    height: 100vh;
+    min-width: 25%;
+    border-right: 1px solid #ccc;
+}
+
+.drawer .header {
+    position: absolute;
+    right: 0;
+    justify-content: space-between;
+}
+
+.drawer .contents {
+    padding: 16px;
+    width: 100%;
+}
+
+.main {
+    background-color: #424242;
+}
+
+.main.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #424242;
+    color: white;
+    z-index: 2;
+    border-bottom: 1px solid #ccc;
+}
+
+.main.contents {
+    min-height: 100vh;
+    margin-top: 64px;
+    /* height of contents */
+    padding: 16px;
+}
+
+.main.footer {
+    position: fixed;
+    border-top: 1px solid #ccc;
+    bottom: 0;
+    width: 100%;
 }

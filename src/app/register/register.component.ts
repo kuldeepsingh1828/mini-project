@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -8,11 +8,14 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  @Input()
+  size: number;
+
   checked = false;
   hide = true;
   form: FormGroup;
   submitted = false;
-  constructor(public dialog: MatDialog, private formBuilder: FormBuilder) { }
+  constructor(public dialog: MatDialog, private formBuilder: FormBuilder) { console.log(this.size); }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -21,6 +24,7 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       mobile: ['', Validators.required],
     })
+    console.log(this.size);
   }
   get f() { return this.form.controls; }
 
