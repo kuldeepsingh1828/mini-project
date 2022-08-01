@@ -1,78 +1,79 @@
-<mat-grid-list cols="1" rowHeight="2:1" gutterSize="0">
-    <mat-grid-tile>
-        <mat-card style="width: 450px;padding: 0;margin:0;background-color: #2E88D1">
-            <mat-card-title style="background-color: #2E88D1">
-                <mat-grid-list cols="1" rowHeight="6:1" gutterSize="0">
-                    <mat-grid-tile>
-                        <a>
-                            <img src="https://dev.firstappos.com/assets/img/logo.png"
-                                style="width: 150px;height:60px;cursor: pointer;" />
-                        </a>
-                    </mat-grid-tile>
-                    <mat-grid-tile>
-                        <h4 style="color: white;">
-                            <mat-icon role="img" style="font-size: 36px;width: 40px; height: 40px;">person_add
-                            </mat-icon>
-                            Register
-                        </h4>
-                    </mat-grid-tile>
-                </mat-grid-list>
-            </mat-card-title>
-            <mat-card-content style="background-color: #303030;padding: 10px;">
-                <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                    <p>
-                        <mat-form-field appearance="outline" style="width: 430px">
-                            <mat-label>Name</mat-label>
-                            <input formControlName="name" matInput placeholder="Name">
-                            <mat-icon matPrefix>person</mat-icon>
-                            <mat-hint *ngIf='submitted && f["name"].errors'>Name is Required</mat-hint>
-                        </mat-form-field>
-                    </p>
-                    <p>
-                        <mat-form-field appearance="outline" style="width: 430px">
-                            <mat-label>Email</mat-label>
-                            <input formControlName="email" matInput placeholder="Email">
-                            <mat-icon matPrefix>email</mat-icon>
-                            <mat-hint *ngIf='submitted && f["email"].errors'>Email is Required</mat-hint>
-                        </mat-form-field>
-                    </p>
-                    <p>
-                        <mat-form-field appearance="outline" style="width: 430px">
-                            <mat-label>Password</mat-label>
-                            <input formControlName="password" matInput placeholder="Password"
-                                [type]="hide ? 'password' : 'text'">
-                            <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                                [attr.aria-pressed]="hide">{{hide?'visibility_off':'visibility'}}</mat-icon>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" style="height: 100vh">
+    <mat-card style="background-color: #2E88D1">
+        <mat-card-title style="background-color: #2E88D1">
+            <mat-grid-list cols="1" rowHeight="6:1" gutterSize="0">
+                <mat-grid-tile>
+                    <a>
+                        <img src="https://dev.firstappos.com/assets/img/logo.png"
+                            style="width: 150px;height:60px;cursor: pointer;" />
+                    </a>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <h4 style="color: white;">
+                        <mat-icon role="img" style="color: white;font-size: 36px;width: 40px; height: 40px;">
+                            person_add
+                        </mat-icon>
+                        Register
+                    </h4>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-title>
+        <mat-card-content style="background-color: #303030;padding: 10px;">
+            <a routerLink="/login" style="padding-left: 100px;color:yellow">Already have a account? Sign In</a>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <p>
+                    <mat-form-field appearance="outline" style="width: 430px">
+                        <mat-label>Name</mat-label>
+                        <input formControlName="name" matInput placeholder="Name">
+                        <mat-icon matPrefix>person</mat-icon>
+                        <mat-hint *ngIf='submitted && f["name"].errors'>Name is Required</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline" style="width: 430px">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" matInput placeholder="Email">
+                        <mat-icon matPrefix>email</mat-icon>
+                        <mat-hint *ngIf='submitted && f["email"].errors'>Email is Required</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline" style="width: 430px">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="password" matInput placeholder="Password"
+                            [type]="hide ? 'password' : 'text'">
+                        <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">{{hide?'visibility_off':'visibility'}}</mat-icon>
 
-                            <mat-icon role="img" matPrefix>lock</mat-icon>
+                        <mat-icon role="img" matPrefix>lock</mat-icon>
 
-                            <mat-hint *ngIf='submitted && f["password"].errors?.["required"]'>Password is Required</mat-hint>
-                            <mat-hint *ngIf='submitted && f["password"].errors?.["minlength"]'>Password isn't long
-                                enough, minimum of 6 characters</mat-hint>
-                        </mat-form-field>
-                    </p>
-                    <p>
-                        <mat-form-field appearance="outline" style="width: 430px">
-                            <mat-label>Mobile Number</mat-label>
-                            <input formControlName="mobile" matInput placeholder="Mobile Number">
-                            <mat-icon matPrefix>phone</mat-icon>
-                            <mat-hint *ngIf='submitted && f["mobile"].errors?.["required"]'>Mobile Number is Required
-                            </mat-hint>
-                        </mat-form-field>
-                    </p>
-                    <p>
-                        <input type="checkbox" />
+                        <mat-hint *ngIf='submitted && f["password"].errors?.["required"]'>Password is Required
+                        </mat-hint>
+                        <mat-hint *ngIf='submitted && f["password"].errors?.["minlength"]'>Password isn't long
+                            enough, minimum of 6 characters</mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline" style="width: 430px">
+                        <mat-label>Mobile Number</mat-label>
+                        <input formControlName="mobile" matInput placeholder="Mobile Number">
+                        <mat-icon matPrefix>phone</mat-icon>
+                        <mat-hint *ngIf='submitted && f["mobile"].errors?.["required"]'>Mobile Number is Required
+                        </mat-hint>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <input type="checkbox" [checked]="checked" />
+                    <span style="line-height: 1;">
                         I agree to the
                         <a (click)="openDialog()" style="color: blue;cursor: pointer;">Terms & Conditions</a>
-                    </p>
-                    <button mat-raised-button style="width:430px;color:white;background-color: #0288d1">Sign Up</button>
-                </form>
-            </mat-card-content>
-        </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
-
-
+                    </span>
+                </p>
+                <button mat-raised-button style="width:430px;color:white;background-color: #0288d1">Sign Up</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
 <!-- Copyright 2022 Google LLC. All Rights Reserved.
       Use of this source code is governed by an MIT-style license that
       can be found in the LICENSE file at https://angular.io/license -->

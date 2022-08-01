@@ -1,55 +1,47 @@
-<mat-grid-list cols="1" rowHeight="2:1" gutterSize="0">
-  <mat-grid-tile>
-    <mat-card style="width: 450px;padding: 0;margin:0;background-color: #2E88D1">
-      <mat-card-title>
-        <mat-grid-list cols="1" rowHeight="6:1" gutterSize="0">
-          <mat-grid-tile>
-            <a>
-              <img src="https://dev.firstappos.com/assets/img/logo.png"
-                style="width: 150px;height:60px;cursor: pointer;" />
-            </a>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <h4 style="color: white;font-size: 18px;">
-              <mat-icon role="img" style="font-size: 36px;width: 40px; height: 40px;">exit_to_app
-              </mat-icon>
-              Login
-            </h4>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </mat-card-title>
-      <mat-card-content style="background-color: #303030;padding: 10px;">
-        <button mat-button style="text-align: center;color:#ffd740;width: 430px;text-decoration: bold">Don't have an
-          account? Sign up
-          now!</button>
-        <form>
-          <p>
-            <mat-form-field appearance="outline" style="width: 430px">
-              <mat-label>Email/Username</mat-label>
-              <input matInput placeholder="Email/Username" style="">
-              <mat-icon matPrefix>email</mat-icon>
-              <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="outline" style="width: 430px">
-              <mat-label>Password</mat-label>
-              <input matInput placeholder="Password">
-              <mat-icon matPrefix>lock</mat-icon>
-              <mat-icon matSuffix>visibility_off</mat-icon>
-              <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-          </p>
-          <button mat-button style="text-align: center;color:#ffd740;width: 430px;text-decoration: bold;">Forgot
-            Password?</button>
-          <button mat-raised-button style="width:430px;color:white;background-color: #0288d1">Sign In</button>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" style="height: 100vh">
 
 
-<!-- Copyright 2022 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at https://angular.io/license -->
+  <mat-card class="box" style="background-color: #2E88D1;text-align: center;">
+    <mat-card-title style="margin:20px">
+      <a>
+        <img src="https://dev.firstappos.com/assets/img/logo.png" style="width: 150px;height:60px;cursor: pointer;" />
+      </a>
+      <h4 style="color: white;font-size: 18px;">
+        <mat-icon role="img" style="font-size: 36px;width: 40px; height: 40px;">exit_to_app
+        </mat-icon>
+        Login
+      </h4>
+    </mat-card-title>
+    <mat-card-content style="background-color: #303030;padding: 10px;">
+      <a routerLink="/register" style="color:#ffd740;width: 430px;text-decoration: bold">Don't have
+        an
+        account? Sign up
+        now!</a><br />
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p style="margin-top:10px;">
+          <mat-form-field appearance="outline" style="width: 400px">
+            <mat-label>Email/Username</mat-label>
+            <input formControlName="username" matInput placeholder="Email/Username">
+            <mat-icon matPrefix>email</mat-icon>
+            <mat-hint *ngIf="submitted && f['username'].errors?.['required']">Email/Username is required</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline" style="width: 400px">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput placeholder="Password" [type]="hide?'password':'text'">
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-icon (click)="hide=!hide" matSuffix>{{hide?"visibility_off":"visibility"}}</mat-icon>
+            <mat-hint *ngIf="submitted && f['password'].errors?.['required']">Password is required</mat-hint>
+            <mat-hint *ngIf="submitted && f['password'].errors?.['minlength']">Password isn't long enough, minimum of 6 characters</mat-hint>
+          </mat-form-field>
+        </p>
+        <a routerLink="/forgot-password" style="color:#ffd740;width: 300px;text-decoration: bold;">Forgot
+          Password?</a><br />
+        <button mat-raised-button style="margin-top:20px;width:400px;color:white;background-color: #0288d1">Sign
+          In</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

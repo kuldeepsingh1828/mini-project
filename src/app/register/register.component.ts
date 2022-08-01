@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  checked = false;
   hide = true;
   form: FormGroup;
   submitted = false;
@@ -34,7 +35,7 @@ export class RegisterComponent implements OnInit {
     const dialogRef = this.dialog.open(RegisterComponentDialog);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      this.checked = result;
     });
   }
 }

@@ -1,17 +1,21 @@
 <mat-drawer-container *ngIf="show" class="example-container" hasBackdrop="false">
-    <mat-drawer #drawer mode="push" style="width: 200px">
-        <mat-grid-list cols="1" rowHeight="50px" style="margin-top: 100px">
+    <mat-drawer #drawer mode="push" style="width: 300px">
+        <mat-grid-list cols="1" rowHeight="300px">
             <mat-grid-tile>
-                <h1>hello</h1>
+                <img src="https://www.kindpng.com/picc/m/378-3783834_professional-interview-icon-40px-circle-hd-png-download.png"
+                    style="width: 100px;height:100px" />
             </mat-grid-tile>
             <mat-grid-tile>
+                <h1>hello</h1><br />
                 <h1>hello</h1>
             </mat-grid-tile>
         </mat-grid-list>
     </mat-drawer>
     <mat-drawer-content>
-        <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
-        <router-outlet></router-outlet>
+        <button style="border: none;">
+            <mat-icon role="button" (click)="drawer.toggle()">menu</mat-icon>
+        </button>
+        <router-outlet style="padding-left: 20px;"></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>
 
