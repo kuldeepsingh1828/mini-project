@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+    background-color: #303030;
+    color: #fff;
+}
+
+input {
+    color: white;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-outline {
+    min-width: 28px !important;
+    border-color: rgb(191, 166, 166);
+}
+
+.mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+}
+
+.mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+}
+
+.mat-icon {
+    color: #C1C1C1;
+}
+
+
+
+.mat-form-field-infix {
+    padding-left: 10px;
+    color: rgb(149, 101, 101);
+}
+
+.mat-form-field-infix:hover {
+    color: green;
+}
+
+/* When the input is not focused */
+.mat-form-field-label {
+    color: #b9a3a3;
+}
+
+/* When the input is focused */
+.mat-form-field-label:focus {
+    color: rgb(172, 172, 172);
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+    border-color: #736b6b;
+    ;
+}
+
+/* Font color */
+input.mat-input-element {
+    color: white;
+}
+
+.mat-hint {
+    color: #ED4F4F;
+}
+
+p {
+    color: white;
+}
+
+.placeholder {
+    color: #ED4F4F;
+}
