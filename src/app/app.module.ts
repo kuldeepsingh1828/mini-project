@@ -19,7 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { SignupComponent } from './signup/signup.component';
+import { RegisterCComponent } from './register-c/register-c.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { SignupComponent } from './signup/signup.component';
     ForgotPasswordComponent,
     DashboardComponent,
     SidebarComponent,
-    SignupComponent
+    RegisterCComponent
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     let url = window.location.href;
-    if (url.match(/register/) || url.match(/login/) || url.match(/forgot-password/)) this.show = false;
+    if (url.match(/register/) || url.match(/login/) || url.match(/forgot-password/) || url.match(/testing/)) this.show = false;
     else {
       this.show = true;
     }

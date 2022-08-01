@@ -1,43 +1,17 @@
-<!-- <mat-toolbar style="flex-direction: row; box-sizing: border-box; display: flex;">
-    
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon style="flex-grow: 1" (click)="toggleDrawer()">menu</mat-icon>
-    </button>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>circle</mat-icon>
-    </button>
-</mat-toolbar>
-<mat-drawer-container *ngIf="show" class="main-nav" class="main-nav example-container" hasBackdrop="false"
-    style="width: 300px;margin-top: 63px;background-color:#424242">
-    <mat-drawer [opened]="drawerOpen" style="flex-grow: 1">
-        <mat-grid-list cols="1" rowHeight="300px">
-            <mat-grid-tile>
-                <img src="https://www.kindpng.com/picc/m/378-3783834_professional-interview-icon-40px-circle-hd-png-download.png"
-                    style="width: 100px;height:100px" />
-            </mat-grid-tile>
-            <mat-grid-tile>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </mat-drawer>
-    <mat-drawer-content>
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
-</mat-drawer-container> -->
-<mat-toolbar class="main header">
-    <a routerLink="/" style="width: 300px">
+<mat-toolbar *ngIf="show" class="main header">
+    <a routerLink="/" style="width: 250px">
         <img src="https://dev.firstappos.com/assets/img/logo.png" style="width: 150px;height:60px;cursor: pointer;" />
     </a>
-    <mat-icon (click)="drawer.toggle()">
+    <mat-icon (click)="toggleDrawer()">
         menu
     </mat-icon>
 </mat-toolbar>
-<mat-drawer-container [class.drawer-opened]="drawer.opened" class="example-container">
-    <mat-drawer #drawer class="drawer" mode="side" opened="true">
+<mat-drawer-container *ngIf="show" class="example-container">
+    <mat-drawer  [opened]="drawerOpen" class="drawer" mode="side" opened="true">
 
         <mat-toolbar class="header">
             <div>Logo</div>
-            <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
+            <mat-icon class="close" (click)="toggleDrawer()">close</mat-icon>
             
         </mat-toolbar>
         <div class="contents">
@@ -48,3 +22,5 @@
         <router-outlet></router-outlet>
     </div>
 </mat-drawer-container>
+
+<router-outlet *ngIf="!show"></router-outlet>

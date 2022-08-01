@@ -43,7 +43,7 @@ body {
 
 
 .mat-form-field-infix {
-    padding-left: 10px;
+    padding-left: 40px;
     color: rgb(149, 101, 101);
 }
 
@@ -198,7 +198,6 @@ body {
     position: fixed;
     height: 100vh;
     min-width: 25%;
-    border-right: 1px solid #ccc;
 }
 
 .drawer .header {
